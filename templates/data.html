@@ -1,0 +1,12 @@
+{% extends "base_layout.html" %}
+{% block content %}
+<div class="data">
+  <h3>Выберите желаемые действия:</h1>
+  <form action="/graph-reviews">   
+    <input type="submit" value="Графические отчеты">
+ </form>
+   <form action="/text-reviews">   
+    <input type="submit" value="Текстовые отчеты">
+ </form>
+</div>
+{% endblock %}

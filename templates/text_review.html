@@ -1,0 +1,22 @@
+{% extends "base_layout.html" %}
+{% block content %}
+<div class="k-means">
+  <h3>Текстовый отчет:</h3>
+  <h4>Определение оптимального количества кластеров:</h4>
+  <img src="{{url_for('static', filename='opt_clusters_num.png')}}" width="1000" height="300"/>
+  <h4>Кластеризация по районам:</h4>
+  <img src="{{url_for('static', filename='district_clustering.png')}}" width="1000" height="1000"/>
+  <h4>Кластеризация по районам и типам преступлений:</h4>
+  <img src="{{url_for('static', filename='district_and_offence_code_clustering.png')}}" width="500" height="500"/>
+  <h3>Изменение частоты преступлений</h1>
+  <h4>Количество преступлений в разные года:</h4>
+  <img src="{{url_for('static', filename='crimes_per_year.png')}}"/>
+  <h4>Количество преступлений по месяцам:</h4>
+  <img src="{{url_for('static', filename='crimes_per_month.png')}}"/>
+  <h4>Количество преступлений по дням недели:</h4>
+  <img src="{{url_for('static', filename='crimes_per_day_of_week.png')}}"/>
+  <h4>Количество преступлений в зависимости от времени(по часам)</h4>
+  <img src="{{url_for('static', filename='crimes_per_hour.png')}}"/>
+  <a href="{{ url_for('hello_pdf') }}">Скачать pdf файл</a>
+</div>
+{% endblock %}

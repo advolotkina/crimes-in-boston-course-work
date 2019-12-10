@@ -1,6 +1,10 @@
-from flask import Flask, request, render_template, redirect, url_for
+from flask import Flask, request, render_template, redirect, url_for, send_from_directory
 import os
 from werkzeug.utils import secure_filename
+import k_means as k_means_module
+import crimes_freq as crimes_freq_module
+import pdfkit
+from flask_weasyprint import HTML, render_pdf
 
 UPLOAD_FOLDER = '/home/zhblnd/crimes_in_boston/flask-server-app/uploads'
 ALLOWED_EXTENSIONS = set(['csv'])
@@ -27,14 +31,32 @@ def main():
 def data():
     return render_template("data.html")
 
-@app.route('/graph-reviews')
-def graph_reviews():
-    return render_template("graph_reviews.html")
+@app.route('/k-means')
+def k_means():
+    k_means_module.optimal_num_of_clusters()
+    k_means_module.district_clustering()
+    k_means_module.district_and_offence_code_clustering()
+    return render_template("k-means.html")
 
-@app.route('/text-reviews')
-def text_reviews():
-    return render_template("text_reviews.html")
+@app.route('/сrimes-frequency')
+def crimes_frequency():
+    crimes_freq_module.crimes_per_year()
+    crimes_freq_module.crimes_per_month()
+    crimes_freq_module.crimes_per_day_of_week()
+    return render_template("crimes_freq.html")
 
+@app.route('/text-review')
+def text_review():
+    return render_template("text_review.html")
+
+@app.route('/pdf_review')
+def pdf_review():
+    return render_template("nice_pdf_review.html")
+
+@app.route('/text_review.pdf')
+def hello_pdf():
+    # Make a PDF from another view
+    return render_pdf(url_for('pdf_review'))
 # main loop to run app in debug mode
 if __name__ == '__main__':
     app.run(host='0.0.0.0')

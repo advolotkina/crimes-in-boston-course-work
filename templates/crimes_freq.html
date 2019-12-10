@@ -1,0 +1,14 @@
+{% extends "base_layout.html" %}
+{% block content %}
+<div class="сrimes-freq">
+  <h3>Изменение частоты преступлений</h1>
+  <h4>Количество преступлений в разные года:</h4>
+  <img src="{{url_for('static', filename='crimes_per_year.png')}}"/>
+  <h4>Количество преступлений по месяцам:</h4>
+  <img src="{{url_for('static', filename='crimes_per_month.png')}}"/>
+  <h4>Количество преступлений по дням недели:</h4>
+  <img src="{{url_for('static', filename='crimes_per_day_of_week.png')}}"/>
+  <h4>Количество преступлений в зависимости от времени(по часам)</h4>
+  <img src="{{url_for('static', filename='crimes_per_hour.png')}}"/>
+</div>
+{% endblock %}

@@ -1,0 +1,12 @@
+{% extends "base_layout.html" %}
+{% block content %}
+<div class="k-means">
+  <h3>Кластеризация методом k-means:</h3>
+  <h4>Определение оптимального количества кластеров:</h4>
+  <img src="{{url_for('static', filename='opt_clusters_num.png')}}" width="1000" height="300"/>
+  <h4>Кластеризация по районам:</h4>
+  <img src="{{url_for('static', filename='district_clustering.png')}}" width="1000" height="1000"/>
+  <h4>Кластеризация по районам и типам преступлений:</h4>
+  <img src="{{url_for('static', filename='district_and_offence_code_clustering.png')}}" width="500" height="500"/>
+</div>
+{% endblock %}

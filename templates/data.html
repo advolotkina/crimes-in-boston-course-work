@@ -2,11 +2,14 @@
 {% block content %}
 <div class="data">
   <h3>Выберите желаемые действия:</h1>
-  <form action="/graph-reviews">   
-    <input type="submit" value="Графические отчеты">
+  <form action="/k-means">   
+    <input type="submit" value="Кластеризация методом k-means">
  </form>
-   <form action="/text-reviews">   
-    <input type="submit" value="Текстовые отчеты">
+   <form action="/сrimes-frequency">   
+    <input type="submit" value="Изменение частоты преступлений">
+ </form>
+    <form action="/text-review">   
+    <input type="submit" value="Текстовый отчет">
  </form>
 </div>
 {% endblock %}

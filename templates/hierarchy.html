@@ -1,0 +1,12 @@
+{% extends "base_layout.html" %}
+{% block content %}
+<div class="hierarchy">
+  <h3>Кластеризация методом иерархии:</h3>
+  <h4>Определение оптимального количества кластеров:</h4>
+  <img src="{{url_for('static', filename='hierarchy_clusters.png')}}" width="1000" height="300"/>
+  <h4>Кластеризация по районам:</h4>
+  <img src="{{url_for('static', filename='hierarchy_clustering.png')}}" width="1000" height="1000"/>
+<!--  <h4>Кластеризация по районам и типам преступлений:</h4>-->
+<!--  <img src="{{url_for('static', filename='district_and_offence_code_clustering.png')}}" width="500" height="500"/>-->
+</div>
+{% endblock %}

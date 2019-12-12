@@ -1,0 +1,7 @@
+{% extends "base_layout.html" %}
+{% block content %}
+<div class="simple">
+  <h4>Месяц с максимальным количеством преступлений со стрельбой:</h4>
+  <img src="{{url_for('static', filename='shooting_count.png')}}" width="1000" height="300"/>
+</div>
+{% endblock %}

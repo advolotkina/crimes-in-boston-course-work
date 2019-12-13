@@ -1,15 +1,22 @@
 {% extends "base_layout.html" %}
 {% block content %}
 <div class="data">
-  <h3>Выберите желаемые действия:</h1>
+  <h3>Выберите желаемые действия:</h3>
+        <form action="/simple-tasks">
+    <input type="submit" value="Простейшие задачи анализа данных">
+ </form>
   <form action="/k-means">   
     <input type="submit" value="Кластеризация методом k-means">
+ </form>
+      <form action="/hierarchy">
+    <input type="submit" value="Кластеризация иерархическим методом">
  </form>
    <form action="/сrimes-frequency">   
     <input type="submit" value="Изменение частоты преступлений">
  </form>
     <form action="/text-review">   
-    <input type="submit" value="Текстовый отчет">
+    <input type="submit" value="Общий отчет">
  </form>
+
 </div>
 {% endblock %}

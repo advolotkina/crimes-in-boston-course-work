@@ -9,6 +9,8 @@ def make_pdf_review():
     pdf.image('./static/opt_clusters_num.png', x=10, y=8, w=100)
     pdf.image('./static/district_clustering.png', x=10, y=500, w=100)
     pdf.image('./static/district_and_offence_code_clustering.png', x=10, y=1000, w=100)
+    pdf.image('./static/hierarchy_clusters.png', x=10, y=1400, w=100)
+    pdf.image('./static/hierarchy_clustering.png', x=10, y=1400, w=100)
     pdf.output("./reviews/review.pdf")
 
 if __name__ == '__main__':

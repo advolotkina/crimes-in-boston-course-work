@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <header>
+        <h3>Курсовая работа по анализу датасета Crimes in Boston</h3>
+    </header>
+  <h3>Текстовый отчет:</h3>
+      <h4>Месяц с максимальным количеством преступлений со стрельбой:</h4>
+    <p>{{ month_with_max_shootings }}</p>
+  <img src="{{url_for('static', filename='shooting_count.png')}}" width="500" height="300"/>
+    <h4>Среднее количество преступлений со стрельбой в месяц:</h4>
+    <p>{{average_shooting_month}}</p>
+
+    </div>
+  </body>
+</html>

@@ -6,6 +6,6 @@
   <img src="{{url_for('static', filename='shooting_count.png')}}" width="500" height="300"/>
     <h4>Среднее количество преступлений со стрельбой в месяц:</h4>
     <p>{{average_shooting_month}}</p>
-  <a href="{{ url_for('simple_pdf') }}">Скачать pdf файл</a>
+  <a href="{{ url_for('simple_pdf', file = filename) }}">Скачать pdf файл</a>
 </div>
 {% endblock %}

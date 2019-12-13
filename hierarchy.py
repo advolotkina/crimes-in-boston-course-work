@@ -10,9 +10,9 @@ from scipy.cluster.hierarchy import fcluster
 # def load_data():
 #     df = pd.read_csv('./uploads/tmpex0j7dw9.csv')
 
-def start_hierarhy():
+def start_hierarhy(filename):
     print("HI")
-    df = pd.read_csv('./uploads/tmpex0j7dw9.csv')
+    df = pd.read_csv('./uploads/'+filename)
     location = df[["Lat", "Long"]]
     location = location.loc[(location["Lat"] > 40) & (location["Long"] < -60)]
     location = location.dropna()

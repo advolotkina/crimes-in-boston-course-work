@@ -6,8 +6,8 @@ import numpy as np
 from mpl_toolkits.mplot3d import Axes3D
 from sklearn import metrics
 
-def start_k_means():
-    df = pd.read_csv('./uploads/tmpex0j7dw9.csv')
+def start_k_means(filename):
+    df = pd.read_csv('./uploads/' + filename)
     # Dataframe for clustering on location
     location = df[["Lat", "Long"]]
     # Drop NaN values
@@ -36,7 +36,8 @@ def start_k_means():
     y_km = km.predict(X)
     labels = km.labels_
 
-    print(labels)
+    # print(labels)
+    # print(X)
     centers = km.cluster_centers_
 
     # Plot for clustering on location
@@ -70,14 +71,14 @@ def start_k_means():
     labels = km.labels_
     centers = km.cluster_centers_
     # Plot for clustering on location and offense_code
-    fig = plt.figure(1, figsize=(7, 7))
+    fig = plt.figure(1, figsize=(40, 40))
     ax = Axes3D(fig, rect=[0, 0, 0.95, 1], elev=48, azim=134)
     ax.scatter(X[:, 1], X[:, 0], X[:, 2], c=y_km, edgecolor="k", s=50)
     ax.set_xlabel("Long")
     ax.set_ylabel("Lat")
     ax.set_zlabel("OFFENSE CODE")
     plt.title("KMeans n_clusters = 3 in location and offense_code")
-    plt.savefig('./static/district_and_offence_code_clustering.png')
+    plt.savefig('./static/district_and_offence_code_clustering_k_means.png')
 
 
 
@@ -192,4 +193,4 @@ def start_k_means():
 #     return score
 #
 if __name__ == '__main__':
-    print('main')
+    print('k-means clustering')

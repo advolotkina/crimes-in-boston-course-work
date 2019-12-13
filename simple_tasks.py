@@ -17,6 +17,15 @@ def max_shooting_month(filename):
 def average_shooting_month(filename):
     df = pd.read_csv('./uploads/'+ filename)
     shoot = df.groupby(df['MONTH']).count()
+    print(shoot['SHOOTING'])
     shoot_mean = shoot.mean()
     print(shoot_mean['SHOOTING'])
     return shoot_mean['SHOOTING']
+
+def getShootingNumPerMonth(filename):
+    df = pd.read_csv('./uploads/'+ filename)
+    shoot = df.groupby(df['MONTH']).count()
+    print(shoot['SHOOTING'])
+
+    return shoot['SHOOTING']
+

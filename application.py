@@ -81,8 +81,10 @@ def simple_review():
     # default_filename = request.args.get('filename')
     month_with_max_shootings = simple_tasks_module.max_shooting_month(default_filename)
     average_shooting_month = simple_tasks_module.average_shooting_month(default_filename)
+    shooting_list = simple_tasks_module.getShootingNumPerMonth(default_filename)
+    i = 1;
     return render_template("simple_review.html",average_shooting_month = average_shooting_month,
-                           month_with_max_shootings = month_with_max_shootings)
+                           month_with_max_shootings = month_with_max_shootings, shooting_list = shooting_list,i = i)
 
 @app.route('/text_review.pdf')
 def hello_pdf():
@@ -91,7 +93,7 @@ def hello_pdf():
 
 @app.route('/simple_review.pdf')
 def simple_pdf():
-    return render_pdf(url_for("simple_review",filename = default_filename))
+    return render_pdf(url_for("simple_review"))
 # main loop to run app in debug mode
 if __name__ == '__main__':
     app.run(host='0.0.0.0')

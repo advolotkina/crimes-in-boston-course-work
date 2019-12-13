@@ -10,7 +10,21 @@
   <img src="{{url_for('static', filename='shooting_count.png')}}" width="500" height="300"/>
     <h4>Среднее количество преступлений со стрельбой в месяц:</h4>
     <p>{{average_shooting_month}}</p>
-
+    <h4>Количество преступлений со стрельбой в определенный месяц</h4>
+    {% set count = namespace(value=1) %}
+    <table>
+        <tr>
+      <td>Кол-во</td>
+        <td>Месяц</td>
+    </tr>
+    {% for segment in shooting_list %}
+    <tr>
+      <td>{{segment}}</td>
+        <td>{{count.value}}</td>
+    </tr>
+        {% set count.value = count.value + 1 %}
+  {% endfor %}
+            </table>
     </div>
   </body>
 </html>

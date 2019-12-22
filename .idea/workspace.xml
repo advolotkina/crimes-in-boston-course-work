@@ -2,26 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="57d6f0b1-43ce-42dd-b99a-2a3ed4b1c15a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/templates/nice_best_k_means_review.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/application.py" beforeDir="false" afterPath="$PROJECT_DIR$/application.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hierarchy.py" beforeDir="false" afterPath="$PROJECT_DIR$/hierarchy.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/k_means.py" beforeDir="false" afterPath="$PROJECT_DIR$/k_means.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/crimes_per_day_of_week.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/crimes_per_day_of_week.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/crimes_per_hour.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/crimes_per_hour.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/crimes_per_month.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/crimes_per_month.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/crimes_per_year.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/crimes_per_year.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/district_and_offence_code_clustering_k_means.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/district_and_offence_code_clustering_k_means.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/district_clustering.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/district_clustering.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/district_clustering_review.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/district_clustering_review.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/hierarchy_clustering.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/hierarchy_clustering.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/hierarchy_clusters.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/hierarchy_clusters.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/opt_clusters_num.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/opt_clusters_num.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/shooting_count.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/shooting_count.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base_layout.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base_layout.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/k-means.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/k-means.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/nice_pdf_review.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/nice_pdf_review.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/uploads/tmpex0j7dw9.csv" beforeDir="false" afterPath="$PROJECT_DIR$/uploads/tmpex0j7dw9.csv" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -38,8 +20,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/application.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="252">
-              <caret line="140" column="93" selection-start-line="140" selection-start-column="93" selection-end-line="140" selection-end-column="93" />
+            <state relative-caret-position="357">
+              <caret line="93" column="37" selection-start-line="93" selection-start-column="37" selection-end-line="93" selection-end-column="37" />
               <folding>
                 <element signature="e#0#89#0" expanded="true" />
               </folding>
@@ -310,15 +292,16 @@
       <workItem from="1576185813829" duration="5582000" />
       <workItem from="1576222614885" duration="5528000" />
       <workItem from="1576233442528" duration="3959000" />
-      <workItem from="1577009214169" duration="25146000" />
+      <workItem from="1577009214169" duration="25238000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="44402000" />
+    <option name="totallyTimeSpent" value="44494000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="30" width="1366" height="738" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.27045456" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -334,7 +317,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="11" visible="true" weight="0.30213463" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="11" visible="true" weight="0.18719211" />
       <window_info anchor="bottom" id="Python Console" order="12" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -614,8 +597,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/application.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="140" column="93" selection-start-line="140" selection-start-column="93" selection-end-line="140" selection-end-column="93" />
+        <state relative-caret-position="357">
+          <caret line="93" column="37" selection-start-line="93" selection-start-column="37" selection-end-line="93" selection-end-column="37" />
           <folding>
             <element signature="e#0#89#0" expanded="true" />
           </folding>

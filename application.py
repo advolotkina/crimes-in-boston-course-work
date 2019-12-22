@@ -70,6 +70,7 @@ def predict_with_model_main():
     clean_data_module.clean(data_file)
     clustering = request.args.get('clustering')
     if clustering == "k_means":
+        clean_data_module.clean(data_file)
         score, score2, objects, labels = k_means_module.predict_with_model(data_file, model_file, model_file2)
         dictionary = dict(zip(tuple(objects), tuple(labels)))
         return render_template("k-means.html", score=score, score2=score2, _dict = dictionary)
@@ -90,6 +91,7 @@ def train_and_predict():
 @app.route('/user-task/train_and_predict/main')
 def train_and_predict_main():
     data_file = request.args.get('filename')
+    clean_data_module.clean(data_file)
     k_means_score1, k_means_score2, objects_array, labels_array, model_filename, model_filename2 = k_means_module.start_k_means(data_file)
     hierarchy_score1, hierarchy_score2 = hierarchy_module.start_hierarhy(data_file)
     if (1-k_means_score1)<(1-hierarchy_score1):

@@ -6,10 +6,10 @@ import hierarchy as hierarchy_module
 import simple_tasks as simple_tasks_module
 import crimes_freq as crimes_freq_module
 import clean_data as clean_data_module
-from PIL import Image
-import PIL
-import pdfkit
-from flask_weasyprint import HTML, render_pdf
+# from PIL import Image
+# import PIL
+# import pdfkit
+# from flask_weasyprint import HTML, render_pdf
 from sklearn import metrics
 
 UPLOAD_FOLDER = '/home/zhblnd/crimes_in_boston/flask-server-app/uploads'
@@ -107,17 +107,17 @@ def train_and_predict_main():
         return render_template("best_hierarchy.html")
 
 
-@app.route('/user-task/train_and_predict/k_means<a>')
-@app.route('/user-task/train_and_predict/k_means<a>/<b>')
-@app.route('/user-task/train_and_predict/k_means<a>/<b>/<c>')
-@app.route('/user-task/train_and_predict/k_means')
-def best_k_means_pdf():
-    score = request.args.get('_score')
-    score2 = request.args.get('_score2')
-    filename = request.args.get('file')
-    hierarchy_score = request.args.get('hierarchy_score')
-    return render_pdf(url_for('nice_k_means_pdf', score = score, score2 = score2, file = filename,
-                              hierarchy_score = hierarchy_score))
+# @app.route('/user-task/train_and_predict/k_means<a>')
+# @app.route('/user-task/train_and_predict/k_means<a>/<b>')
+# @app.route('/user-task/train_and_predict/k_means<a>/<b>/<c>')
+# @app.route('/user-task/train_and_predict/k_means')
+# def best_k_means_pdf():
+#     score = request.args.get('_score')
+#     score2 = request.args.get('_score2')
+#     filename = request.args.get('file')
+#     hierarchy_score = request.args.get('hierarchy_score')
+#     return render_pdf(url_for('nice_k_means_pdf', score = score, score2 = score2, file = filename,
+#                               hierarchy_score = hierarchy_score))
 
 @app.route('/best_k_means_pdf_review')
 def nice_k_means_pdf():
@@ -126,14 +126,14 @@ def nice_k_means_pdf():
     filename = request.args.get('file')
     hierarchy_score = request.args.get('hierarchy_score')
     dictionary = k_means_module.get_elements_and_labels(filename)
-    im = Image.open("./static/district_and_offence_code_clustering_k_means.png")
-    width, height = im.size
-    newsize = (700, 700)
-    im = im.resize(newsize)
-    im.save("./static/district_and_offence_code_clustering_k_means_review.png")
-
-    return render_template("nice_best_k_means_review.html", score = score, score2 = score2, _dict = dictionary,
-                           hierarchy_score = hierarchy_score, k_means_score = score)
+    # im = Image.open("./static/district_and_offence_code_clustering_k_means.png")
+    # width, height = im.size
+    # newsize = (700, 700)
+    # im = im.resize(newsize)
+    # im.save("./static/district_and_offence_code_clustering_k_means_review.png")
+    #
+    # return render_template("nice_best_k_means_review.html", score = score, score2 = score2, _dict = dictionary,
+    #                        hierarchy_score = hierarchy_score, k_means_score = score)
 
 @app.route('/download-model')
 def download_model():
@@ -189,11 +189,11 @@ def pdf_review():
     score_2 = f.read()
     f.close()
     print(score_2)
-    im = Image.open("./static/hierarchy_clustering.png")
-    width, height = im.size
+    # im = Image.open("./static/hierarchy_clustering.png")
+    # width, height = im.size
     newsize = (700, 700)
-    im = im.resize(newsize)
-    im.save("./static/hierarchy_clustering_review.png")
+    # im = im.resize(newsize)
+    # im.save("./static/hierarchy_clustering_review.png")
     f = open("./scores/"+"hierarchy_score_1", "r+")
     hierarchy_score = f.read()
     f.close()
@@ -212,15 +212,15 @@ def simple_review():
                            month_with_max_shootings = month_with_max_shootings, shooting_list = shooting_list,i = i)
 
 # Не текстовый, а общий(
-@app.route('/text_review.pdf')
-def hello_pdf():
-    # Make a PDF from another view
-    return render_pdf(url_for('pdf_review'))
+# @app.route('/text_review.pdf')
+# def hello_pdf():
+#     # Make a PDF from another view
+#     return render_pdf(url_for('pdf_review'))
 
-@app.route('/simple_review.pdf',)
-def simple_pdf():
-    filename = request.args.get('file')
-    return render_pdf(url_for("simple_review",file = filename))
+# @app.route('/simple_review.pdf',)
+# def simple_pdf():
+#     filename = request.args.get('file')
+#     return render_pdf(url_for("simple_review",file = filename))
 # main loop to run app in debug mode
 if __name__ == '__main__':
     app.run(host='0.0.0.0')

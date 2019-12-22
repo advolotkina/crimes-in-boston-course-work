@@ -3,10 +3,17 @@
 <div class="hierarchy">
   <h3>Кластеризация методом иерархии:</h3>
   <h4>Определение оптимального количества кластеров:</h4>
-  <img src="{{url_for('static', filename='hierarchy_clusters.png')}}" width="500" height="300"/>
+  <img src="{{url_for('static', filename='hierarchy_clustersNEW1.png')}}"/>
   <h4>Кластеризация по районам:</h4>
-  <img src="{{url_for('static', filename='hierarchy_clustering.png')}}"/>
-<!--  <h4>Кластеризация по районам и типам преступлений:</h4>-->
-<!--  <img src="{{url_for('static', filename='district_and_offence_code_clustering.png')}}" width="500" height="500"/>-->
+  <img src="{{url_for('static', filename='hierarchy_clusteringNEW1.png')}}" width="1000" height="1000"/>
+    <h3>Оценка методом силуэт:</h3>
+    <p>{{ score }}</p>
+  <h4>Кластеризация по районам и типам преступлений:</h4>
+  <img src="{{url_for('static', filename='district_and_offence_code_clustering.png')}}" />
+<a href="{{ url_for('download_model', model_filename = model_filename) }}" ><button class='btn btn-default'>Скачать модель кластеризации по районам</button></a>
+<a href="{{ url_for('download_model', model_filename = model_filename2) }}" ><button class='btn btn-default'>Скачать модель кластеризации по районам и типам</button></a><p>
+ <a href="{{ url_for('best_k_means_pdf', _score = score, _score2 = score2, file = filename, hierarchy_score = hierarchy_score) }}">Скачать pdf файл</a>
+    <h3>Оценка методом силуэт:</h3>
+    <p>{{ score2 }}</p>
 </div>
 {% endblock %}

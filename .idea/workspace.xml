@@ -2,11 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ec127b04-7e71-43ce-b128-fe90e30f7fe2" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/flask-server-app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/flask-server-app.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/freq_type.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/freq_type.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/application.py" beforeDir="false" afterPath="$PROJECT_DIR$/application.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hierarchy.py" beforeDir="false" afterPath="$PROJECT_DIR$/hierarchy.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/best_hierarchy.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/best_hierarchy.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/data.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/data.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/hierarchy.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/hierarchy.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -43,6 +46,9 @@
     <option name="width" value="799" />
     <option name="height" value="738" />
   </component>
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
@@ -53,6 +59,9 @@
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Repositories\IIS\crimes-in-boston-course-work" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/static" />
       <recent name="$PROJECT_DIR$" />

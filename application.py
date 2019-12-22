@@ -5,6 +5,7 @@ import k_means as k_means_module
 import hierarchy as hierarchy_module
 import simple_tasks as simple_tasks_module
 import crimes_freq as crimes_freq_module
+import freq_type as freq_type
 import clean_data as clean_data_module
 # from PIL import Image
 # import PIL
@@ -12,7 +13,7 @@ import clean_data as clean_data_module
 # from flask_weasyprint import HTML, render_pdf
 from sklearn import metrics
 
-UPLOAD_FOLDER = '/home/zhblnd/crimes_in_boston/flask-server-app/uploads'
+UPLOAD_FOLDER = 'uploads'
 ALLOWED_EXTENSIONS = set(['csv','pkl'])
 # Create a new Flask application
 app = Flask(__name__)
@@ -78,7 +79,11 @@ def predict_with_model_main():
         return render_template("k-means.html", score=score, score2=score2, _dict = dictionary, model_filename = model_file,
                                model_filename2 = model_file2, filename = data_file)
     if clustering == "hierarchy":
-        return "TODO"
+        clean_data_module.clean(data_file)
+        score, score2, objects, labels = hierarchy_module.predict_with_model(data_file, model_file, model_file2)
+        dictionary = dict(zip(tuple(objects), tuple(labels)))
+        return render_template("hierarchy.html", score=score, score2=score2, model_filename=model_file,
+                               model_filename2=model_file2, filename=data_file)
 
 
 @app.route('/user-task/train_and_predict', methods=['GET','POST'])
@@ -96,7 +101,7 @@ def train_and_predict_main():
     data_file = request.args.get('filename')
     clean_data_module.clean(data_file)
     k_means_score1, k_means_score2, objects_array, labels_array, model_filename, model_filename2 = k_means_module.start_k_means(data_file)
-    hierarchy_score1, hierarchy_score2 = hierarchy_module.start_hierarhy(data_file)
+    hierarchy_score1, hierarchy_score2, model_filename, model_filename2 = hierarchy_module.start_hierarhy(data_file)
     if (1-k_means_score1)<(1-hierarchy_score1):
         dictionary = dict(zip(tuple(objects_array), tuple(labels_array)))
 
@@ -157,8 +162,16 @@ def k_means():
 def hierarchy():
     filename = request.args.get('filename')
     clean_data_module.clean(filename)
-    hierarchy_module.start_hierarhy(filename)
-    return render_template("hierarchy.html")
+    score, score2, objects, labels, model_filename, model_filename2 = hierarchy_module.start_hierarhy(filename)
+    return render_template("hierarchy.html",score = score, score2 = score2, model_filename = model_filename,
+                           model_filename2 = model_filename2, filename = filename)
+
+
+@app.route('/freq_type',methods=['GET','POST'])
+def freq_type():
+    filename = request.args.get('filename')
+    freq_type.start(filename)
+    return render_template("freq_type.html")
 
 
 @app.route('/simple-tasks',methods=['GET','POST'])

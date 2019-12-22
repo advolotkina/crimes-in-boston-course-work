@@ -1,0 +1,28 @@
+{% extends "base_layout.html" %}
+{% block content %}
+<div class="main">
+    <h3>Загрузите сsv файл:</h3>
+    <form action="" method=post enctype=multipart/form-data>
+      <p><input type=file name=file>
+{#         <input type=submit value=Upload>#}
+    <h3>Загрузите файл модели кластеризации по районам:</h3>
+      <p><input type=file name=model>
+{#         <input type=submit value=Upload>#}
+
+        <h3>Загрузите файл модели кластеризации по районам и типам преступлений:</h3>
+      <p><input type=file name=model2>
+          <h3>Выберите тип загружаемой модели</h3>
+                        <input class="form-check-input" type="radio" name="radiobutton" id="" value="k_means" checked>
+                        <label class="form-check-label" for="radiobutton1">
+                            К-средних
+                        </label>
+
+                        <input class="form-check-input" type="radio" name="radiobutton" id="radiobutton2"
+                               value="hierarchy">
+                        <label class="form-check-label" for="exampleRadios2">
+                            Иерархическая
+                        </label>
+        <input type=submit value=Upload>
+    </form>
+</div>
+{% endblock %}

@@ -1,0 +1,40 @@
+{% extends "base_layout.html" %}
+{% block content %}
+<div class="k-means">
+  <h3>Выбранная модель: к-средних</h3>
+    <h3>Оценка методом силуэтов k-means:</h3>
+    <p>{{ k_means_score }}</p>
+    <h3>Оценка методом силуэтов иерархической модели:</h3>
+    <p>{{ hierarchy_score }}</p>
+{#  <h4>Определение оптимального количества кластеров:</h4>#}
+{#  <img src="{{url_for('static', filename='opt_clusters_num.png')}}"/>#}
+  <h4>Кластеризация по районам:</h4>
+  <img src="{{url_for('static', filename='district_clustering.png')}}" width="800" height="800"/>
+    <h3>Оценка методом силуэтов:</h3>
+    <p>{{ score }}</p>
+  <h4>Кластеризация по районам и типам преступлений:</h4>
+  <img src="{{url_for('static', filename='district_and_offence_code_clustering_k_means.png')}}"/>
+    <h3>Оценка методом силуэтов:</h3>
+    <p>{{ score2 }}</p>
+
+{#    <a href="{{ url_for('best_k_means_pdf', file = filename) }}">Скачать модель</a>#}
+{#    <a href="{{ url_for('best_k_means_pdf', _score = score, _score2 = score2, dict = _dict) }}">Скачать pdf отчет</a>#}
+<a href="{{ url_for('download_model', model_filename = model_filename) }}" ><button class='btn btn-default'>Скачать модель кластеризации по районам</button></a>
+<a href="{{ url_for('download_model', model_filename = model_filename2) }}" ><button class='btn btn-default'>Скачать модель кластеризации по районам и типам</button></a>
+ <a href="{{ url_for('best_k_means_pdf', _score = score, _score2 = score2, file = filename, hierarchy_score = hierarchy_score) }}">Скачать pdf файл</a>
+<h3>Элементы и приписанные им кластеры:</h3>
+        <table>
+        <tr>
+      <td>Элемент</td>
+        <td>Кластер</td>
+    </tr>
+    {% for key, value in _dict.items() %}
+    <tr>
+        <td>{{key}}</td>
+        <td>{{value}}</td>
+    </tr>
+  {% endfor %}
+            </table>
+
+</div>
+{% endblock %}

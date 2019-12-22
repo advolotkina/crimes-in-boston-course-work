@@ -1,0 +1,7 @@
+{% extends "base_layout.html" %}
+{% block content %}
+<div class="user-task">
+            <li><a href="{{ url_for('predict_with_model') }}">У меня уже есть обученная модель</a></li>
+            <li><a href="{{ url_for('train_and_predict') }}">У меня нет обученной модели</a></li>
+</div>
+{% endblock %}

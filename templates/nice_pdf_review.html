@@ -9,11 +9,15 @@
   <img src="{{url_for('static', filename='opt_clusters_num.png')}}"/>
   <h4>Кластеризация по районам методом k-means:</h4>
   <img src="{{url_for('static', filename='district_clustering_review.png')}}"/>
+        <h3>Оценка методом силуэт:</h3>
+    <p>{{ k_means_score }}</p>
   <h4>Кластеризация по районам иерархическим методом:</h4>
    <img src="{{url_for('static', filename='hierarchy_clustering.png', width=300, height = 300)}}"/>
   <h4>Кластеризация по районам и типам преступлений:</h4>
   <img src="{{url_for('static', filename='district_and_offence_code_clustering.png')}}" width="500" height="500"/>
-  <h3>Изменение частоты преступлений</h1>
+        <h3>Оценка методом силуэт:</h3>
+    <p>{{ k_means_score2 }}</p>
+  <h3>Изменение частоты преступлений</h3>
   <h4>Количество преступлений в разные года:</h4>
   <img src="{{url_for('static', filename='crimes_per_year.png')}}"/>
   <h4>Количество преступлений по месяцам:</h4>

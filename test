@@ -1,0 +1,2 @@
+f = open("./scores/"+"k_means_score", "w+")
+f.write(str(0.3985400857017252)

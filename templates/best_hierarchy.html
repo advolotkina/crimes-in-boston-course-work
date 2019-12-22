@@ -1,0 +1,17 @@
+{% extends "base_layout.html" %}
+{% block content %}
+<div class="hierarchy">
+    <h3>Выбранная модель методом силуэтов: иерархическая</h3>
+    <h3>Оценка методом силуэтов k-means:</h3>
+    <p>{{ k_means_score }}</p>
+    <h3>Оценка методом силуэтов иерархической модели:</h3>
+    <p>{{ hieararchy_score }}</p>
+  <h4>Определение оптимального количества кластеров:</h4>
+  <img src="{{url_for('static', filename='hierarchy_clusters.png')}}" width="500" height="300"/>
+  <h4>Кластеризация по районам:</h4>
+  <img src="{{url_for('static', filename='hierarchy_clustering.png')}}"/>
+<!--  <h4>Кластеризация по районам и типам преступлений:</h4>-->
+<!--  <img src="{{url_for('static', filename='district_and_offence_code_clustering.png')}}" width="500" height="500"/>-->
+{#    <a href="{{ url_for('best_hierarchy_pdf', file = filename) }}">Скачать pdf отчёт</a>#}
+</div>
+{% endblock %}

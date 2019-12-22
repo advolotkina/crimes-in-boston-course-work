@@ -6,9 +6,26 @@
   <img src="{{url_for('static', filename='opt_clusters_num.png')}}"/>
   <h4>Кластеризация по районам:</h4>
   <img src="{{url_for('static', filename='district_clustering.png')}}" width="1000" height="1000"/>
-  <h4>Кластеризация по районам и типам преступлений:</h4>
-  <img src="{{url_for('static', filename='district_and_offence_code_clustering_k_means.png')}}" width="1000" height="1000"/>
     <h3>Оценка методом силуэт:</h3>
     <p>{{ score }}</p>
+  <h4>Кластеризация по районам и типам преступлений:</h4>
+  <img src="{{url_for('static', filename='district_and_offence_code_clustering_k_means.png')}}" />
+<a href="{{ url_for('download_model', model_filename = model_filename) }}" ><button class='btn btn-default'>Скачать модель кластеризации по районам</button></a>
+<a href="{{ url_for('download_model', model_filename = model_filename2) }}" ><button class='btn btn-default'>Скачать модель кластеризации по районам и типам</button></a>
+    <h3>Оценка методом силуэт:</h3>
+    <p>{{ score2 }}</p>
+<h3>Элементы и приписанные им кластеры:</h3>
+        <table>
+        <tr>
+      <td>Элемент</td>
+        <td>Кластер</td>
+    </tr>
+    {% for key, value in _dict.items() %}
+    <tr>
+        <td>{{key}}</td>
+        <td>{{value}}</td>
+    </tr>
+  {% endfor %}
+            </table>
 </div>
 {% endblock %}

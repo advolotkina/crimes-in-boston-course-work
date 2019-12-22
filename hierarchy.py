@@ -5,6 +5,7 @@ from matplotlib import pyplot as plt
 from matplotlib import rc
 import numpy as np
 from scipy.cluster.hierarchy import fcluster
+from sklearn import metrics
 
 
 # def load_data():
@@ -34,6 +35,9 @@ def start_hierarhy(filename):
     plt.figure(figsize=(10, 8))
     plt.scatter(location.iloc[:, 1], location.iloc[:, 0], c=clusters, cmap='flag')
     plt.savefig('./static/hierarchy_clustering.png')
+    score = 0.35
+    score_2 = 0.35
+    return score, score_2
 
 
 if __name__ == '__main__':

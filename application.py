@@ -6,6 +6,8 @@ import hierarchy as hierarchy_module
 import simple_tasks as simple_tasks_module
 import crimes_freq as crimes_freq_module
 import clean_data as clean_data_module
+from PIL import Image
+import PIL
 import pdfkit
 from flask_weasyprint import HTML, render_pdf
 from sklearn import metrics
@@ -73,7 +75,8 @@ def predict_with_model_main():
         clean_data_module.clean(data_file)
         score, score2, objects, labels = k_means_module.predict_with_model(data_file, model_file, model_file2)
         dictionary = dict(zip(tuple(objects), tuple(labels)))
-        return render_template("k-means.html", score=score, score2=score2, _dict = dictionary)
+        return render_template("k-means.html", score=score, score2=score2, _dict = dictionary, model_filename = model_file,
+                               model_filename2 = model_file2, filename = data_file)
     if clustering == "hierarchy":
         return "TODO"
 
@@ -123,6 +126,12 @@ def nice_k_means_pdf():
     filename = request.args.get('file')
     hierarchy_score = request.args.get('hierarchy_score')
     dictionary = k_means_module.get_elements_and_labels(filename)
+    im = Image.open("./static/district_and_offence_code_clustering_k_means.png")
+    width, height = im.size
+    newsize = (700, 700)
+    im = im.resize(newsize)
+    im.save("./static/district_and_offence_code_clustering_k_means_review.png")
+
     return render_template("nice_best_k_means_review.html", score = score, score2 = score2, _dict = dictionary,
                            hierarchy_score = hierarchy_score, k_means_score = score)
 
@@ -140,7 +149,9 @@ def k_means():
     dictionary = dict(zip(tuple(objects), tuple(labels)))
 
     return render_template("k-means.html", score = score, score2 = score2, _dict = dictionary,
-                           model_filename = model_filename, model_filename2 = model_filename2)
+                           model_filename = model_filename, model_filename2 = model_filename2,
+                           filename = filename)
+
 
 @app.route('/hierarchy',methods=['GET','POST'])
 def hierarchy():
@@ -178,7 +189,17 @@ def pdf_review():
     score_2 = f.read()
     f.close()
     print(score_2)
-    return render_template("nice_pdf_review.html",k_means_score = score, k_means_score2 = score_2 )
+    im = Image.open("./static/hierarchy_clustering.png")
+    width, height = im.size
+    newsize = (700, 700)
+    im = im.resize(newsize)
+    im.save("./static/hierarchy_clustering_review.png")
+    f = open("./scores/"+"hierarchy_score_1", "r+")
+    hierarchy_score = f.read()
+    f.close()
+
+    return render_template("nice_pdf_review.html",k_means_score = score, k_means_score2 = score_2,
+                           hierarchy_score = hierarchy_score )
 
 @app.route('/simple_review/')
 def simple_review():

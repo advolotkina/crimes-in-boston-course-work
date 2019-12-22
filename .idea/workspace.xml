@@ -4,6 +4,26 @@
     <list default="true" id="57d6f0b1-43ce-42dd-b99a-2a3ed4b1c15a" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/application.py" beforeDir="false" afterPath="$PROJECT_DIR$/application.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/k_means.py" beforeDir="false" afterPath="$PROJECT_DIR$/k_means.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/k_means_districts.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/models/k_means_districts.pkl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/k_means_districts_and_offence_codes.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/models/k_means_districts_and_offence_codes.pkl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scores/hierarchy_score_1" beforeDir="false" afterPath="$PROJECT_DIR$/scores/hierarchy_score_1" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scores/hierarchy_score_2" beforeDir="false" afterPath="$PROJECT_DIR$/scores/hierarchy_score_2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scores/k_means_score" beforeDir="false" afterPath="$PROJECT_DIR$/scores/k_means_score" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scores/k_means_score_2" beforeDir="false" afterPath="$PROJECT_DIR$/scores/k_means_score_2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/crimes_per_day_of_week.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/crimes_per_day_of_week.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/crimes_per_hour.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/crimes_per_hour.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/crimes_per_month.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/crimes_per_month.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/crimes_per_year.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/crimes_per_year.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/district_and_offence_code_clustering_k_means.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/district_and_offence_code_clustering_k_means.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/district_clustering.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/district_clustering.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/district_clustering_review.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/district_clustering_review.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/hierarchy_clusters.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/hierarchy_clusters.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/opt_clusters_num.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/opt_clusters_num.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/k-means.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/k-means.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/nice_best_k_means_review.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/nice_best_k_means_review.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/nice_pdf_review.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/nice_pdf_review.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/uploads/notdefault.csv" beforeDir="false" afterPath="$PROJECT_DIR$/uploads/notdefault.csv" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -17,11 +37,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="93" column="37" selection-start-line="93" selection-start-column="37" selection-end-line="93" selection-end-column="37" />
+            <state relative-caret-position="94">
+              <caret line="127" column="46" selection-start-line="127" selection-start-column="46" selection-end-line="127" selection-end-column="46" />
               <folding>
                 <element signature="e#0#89#0" expanded="true" />
               </folding>
@@ -29,11 +49,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/predict_with_model.html">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/templates/k-means.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="23" column="32" selection-start-line="23" selection-start-column="32" selection-end-line="23" selection-end-column="32" />
+            <state relative-caret-position="184">
+              <caret line="13" column="172" selection-start-line="13" selection-start-column="172" selection-end-line="13" selection-end-column="172" />
             </state>
           </provider>
         </entry>
@@ -41,8 +61,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/simple_review.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="241">
-              <caret line="19" column="38" selection-start-line="19" selection-start-column="38" selection-end-line="19" selection-end-column="38" />
+            <state relative-caret-position="165">
+              <caret line="11" column="37" selection-start-line="11" selection-start-column="37" selection-end-line="11" selection-end-column="37" />
             </state>
           </provider>
         </entry>
@@ -50,8 +70,29 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/nice_pdf_review.html">
           <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="185">
+              <caret line="19" column="35" selection-start-line="19" selection-start-column="35" selection-end-line="19" selection-end-column="35" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/hierarchy.py">
+          <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="150">
-              <caret line="10" column="73" selection-start-line="10" selection-start-column="73" selection-end-line="10" selection-end-column="73" />
+              <caret line="33" column="36" selection-start-line="33" selection-start-column="36" selection-end-line="33" selection-end-column="36" />
+              <folding>
+                <element signature="e#0#19#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/nice_best_k_means_review.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="255">
+              <caret line="17" column="97" selection-start-line="17" selection-start-column="97" selection-end-line="17" selection-end-column="97" />
             </state>
           </provider>
         </entry>
@@ -59,8 +100,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/best_k_means.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="233">
-              <caret line="21" selection-start-line="21" selection-end-line="22" selection-end-column="169" />
+            <state relative-caret-position="263">
+              <caret line="23" selection-start-line="23" selection-end-line="23" selection-end-column="151" />
               <folding>
                 <marker date="1577034061014" expanded="true" signature="285:416" ph="..." />
               </folding>
@@ -69,53 +110,22 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/k-means.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="184">
-              <caret line="13" column="169" selection-start-line="13" selection-start-column="169" selection-end-line="13" selection-end-column="169" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/nice_best_k_means_review.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="9" column="23" selection-start-line="9" selection-start-column="10" selection-end-line="9" selection-end-column="23" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/clean_data.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="5" column="4" selection-start-line="5" selection-start-column="4" selection-end-line="5" selection-end-column="36" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/k_means.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="100" column="81" selection-start-line="100" selection-start-column="81" selection-end-line="100" selection-end-column="81" />
+            <state relative-caret-position="306">
+              <caret line="166" column="41" selection-start-line="166" selection-start-column="41" selection-end-line="166" selection-end-column="41" />
               <folding>
                 <element signature="e#0#34#0" expanded="true" />
-                <marker date="1577033949216" expanded="true" signature="1402:1546" ph="..." />
-                <marker date="1577033949216" expanded="true" signature="2024:2331" ph="..." />
+                <marker date="1577037039123" expanded="true" signature="1402:1546" ph="..." />
+                <marker date="1577037039123" expanded="true" signature="2024:2331" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/simple_tasks.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="8" column="1" selection-start-line="8" selection-start-column="1" selection-end-line="8" selection-end-column="77" />
-            </state>
-          </provider>
+        <entry file="file://$PROJECT_DIR$/static/district_and_offence_code_clustering_k_means.png">
+          <provider selected="true" editor-type-id="images" />
         </entry>
       </file>
     </leaf>
@@ -156,22 +166,22 @@
         <option value="$PROJECT_DIR$/scores/k_means_score" />
         <option value="$PROJECT_DIR$/test.py" />
         <option value="$PROJECT_DIR$/clean_data.py" />
-        <option value="$PROJECT_DIR$/templates/nice_pdf_review.html" />
         <option value="$PROJECT_DIR$/templates/user_task.html" />
         <option value="$PROJECT_DIR$/templates/train_and_predict.html" />
         <option value="$PROJECT_DIR$/scores/hierarchy_score" />
-        <option value="$PROJECT_DIR$/scores/hierarchy_score_2" />
-        <option value="$PROJECT_DIR$/scores/hierarchy_score_1" />
         <option value="$PROJECT_DIR$/hierarchy.py" />
         <option value="$PROJECT_DIR$/templates/best_hierarchy.html" />
         <option value="$PROJECT_DIR$/cutfile.py" />
         <option value="$PROJECT_DIR$/templates/base_layout.html" />
-        <option value="$PROJECT_DIR$/templates/nice_best_k_means_review.html" />
         <option value="$PROJECT_DIR$/templates/predict_with_model.html" />
-        <option value="$PROJECT_DIR$/k_means.py" />
         <option value="$PROJECT_DIR$/templates/best_k_means.html" />
-        <option value="$PROJECT_DIR$/templates/k-means.html" />
+        <option value="$PROJECT_DIR$/k_means.py" />
+        <option value="$PROJECT_DIR$/scores/hierarchy_score_1" />
+        <option value="$PROJECT_DIR$/scores/hierarchy_score_2" />
+        <option value="$PROJECT_DIR$/templates/nice_pdf_review.html" />
+        <option value="$PROJECT_DIR$/templates/nice_best_k_means_review.html" />
         <option value="$PROJECT_DIR$/application.py" />
+        <option value="$PROJECT_DIR$/templates/k-means.html" />
       </list>
     </option>
   </component>
@@ -185,7 +195,17 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
+      <pane id="Scope">
+        <subPane subId="Scope 'Project Files'; set:Project Files; class com.intellij.psi.search.scope.ProjectFilesScope">
+          <expand>
+            <path>
+              <item name="flask-server-app" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -196,7 +216,17 @@
             <path>
               <item name="flask-server-app" type="b2602c69:ProjectViewProjectNode" />
               <item name="flask-server-app" type="462c0819:PsiDirectoryNode" />
+              <item name="models" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="flask-server-app" type="b2602c69:ProjectViewProjectNode" />
+              <item name="flask-server-app" type="462c0819:PsiDirectoryNode" />
               <item name="scores" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="flask-server-app" type="b2602c69:ProjectViewProjectNode" />
+              <item name="flask-server-app" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="flask-server-app" type="b2602c69:ProjectViewProjectNode" />
@@ -215,9 +245,11 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="settings.editor.selected.configurable" value="reference.settings.ide.settings.uml" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/static" />
       <recent name="$PROJECT_DIR$" />
     </key>
   </component>
@@ -233,7 +265,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.getScore">
+  <component name="RunManager" selected="Flask server.flask-server-app">
     <configuration name="getScore" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="flask-server-app" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -292,18 +324,18 @@
       <workItem from="1576185813829" duration="5582000" />
       <workItem from="1576222614885" duration="5528000" />
       <workItem from="1576233442528" duration="3959000" />
-      <workItem from="1577009214169" duration="25238000" />
+      <workItem from="1577009214169" duration="31996000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="44494000" />
+    <option name="totallyTimeSpent" value="51252000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="30" width="1366" height="738" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.27045456" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.3219697" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -317,7 +349,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="11" visible="true" weight="0.18719211" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="11" visible="true" weight="0.25287357" />
       <window_info anchor="bottom" id="Python Console" order="12" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -371,9 +403,6 @@
     <entry file="file://$PROJECT_DIR$/static/district_clustering.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/static/district_and_offence_code_clustering_k_means.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/crimes_freq.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="219">
@@ -390,9 +419,6 @@
           <caret line="13" column="38" selection-start-line="13" selection-start-column="38" selection-end-line="13" selection-end-column="38" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/district_and_offence_code_clustering.png">
-      <provider selected="true" editor-type-id="images" />
     </entry>
     <entry file="file://$PROJECT_DIR$/static/hierarchy_clusters.png">
       <provider selected="true" editor-type-id="images" />
@@ -434,13 +460,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/hierarchy.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-line="11" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/train_and_predict.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
@@ -462,37 +481,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/hierarchy.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-228">
-          <caret line="6" column="42" selection-start-line="6" selection-start-column="42" selection-end-line="6" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scores/hierarchy_score_1">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="4" selection-start-column="4" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scores/hierarchy_score_2">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="4" selection-start-column="4" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scores/k_means_score">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="17" selection-start-column="17" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scores/k_means_score_2">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/static/district_clustering_review.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
@@ -507,13 +495,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
           <caret line="17" column="20" selection-start-line="17" selection-start-column="20" selection-end-line="17" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/text_review.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="21" selection-start-line="21" selection-end-line="21" selection-end-column="59" />
         </state>
       </provider>
     </entry>
@@ -538,27 +519,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/nice_pdf_review.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="73" selection-start-line="10" selection-start-column="73" selection-end-line="10" selection-end-column="73" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/nice_best_k_means_review.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="23" selection-start-line="9" selection-start-column="10" selection-end-line="9" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/simple_review.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="241">
-          <caret line="19" column="38" selection-start-line="19" selection-start-column="38" selection-end-line="19" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/predict_with_model.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
@@ -566,24 +526,172 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/scores/k_means_score">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="19" selection-start-column="19" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scores/k_means_score_2">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/hierarchy_clustering_review.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scores/hierarchy_score_1">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="14" selection-start-column="14" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scores/hierarchy_score_2">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="16" selection-start-column="16" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/hierarchy.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-line="11" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/text_review.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="21" selection-start-line="21" selection-end-line="21" selection-end-column="59" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/district_and_offence_code_clustering.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/district_and_offence_code_clustering_k_means.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hierarchy.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="33" column="36" selection-start-line="33" selection-start-column="36" selection-end-line="33" selection-end-column="36" />
+          <folding>
+            <element signature="e#0#19#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/k_means.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="100" column="81" selection-start-line="100" selection-start-column="81" selection-end-line="100" selection-end-column="81" />
+        <state relative-caret-position="306">
+          <caret line="166" column="41" selection-start-line="166" selection-start-column="41" selection-end-line="166" selection-end-column="41" />
           <folding>
             <element signature="e#0#34#0" expanded="true" />
-            <marker date="1577033949216" expanded="true" signature="1402:1546" ph="..." />
-            <marker date="1577033949216" expanded="true" signature="2024:2331" ph="..." />
+            <marker date="1577037039123" expanded="true" signature="1402:1546" ph="..." />
+            <marker date="1577037039123" expanded="true" signature="2024:2331" ph="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/nice_pdf_review.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="185">
+          <caret line="19" column="35" selection-start-line="19" selection-start-column="35" selection-end-line="19" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/simple_review.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="37" selection-start-line="11" selection-start-column="37" selection-end-line="11" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="uml://JavaScript-modules-diagram//home/zhblnd/crimes_in_boston/flask-server-app/templates">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>JavaScript-modules-diagram</ID>
+          <OriginalElement>$PROJECT_DIR$/templates</OriginalElement>
+          <nodes />
+          <notes />
+          <edges />
+          <settings layout="Hierarchic Group" zoom="1.0" x="240.0" y="240.0" />
+          <SelectedNodes />
+          <Categories>
+            <Category>All</Category>
+          </Categories>
+          <VISIBILITY>Overview</VISIBILITY>
+        </state>
+      </provider>
+    </entry>
+    <entry file="uml://Python/#/home/zhblnd/crimes_in_boston/flask-server-app/application.py">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>Python</ID>
+          <OriginalElement>#/home/zhblnd/crimes_in_boston/flask-server-app/application.py</OriginalElement>
+          <nodes />
+          <notes />
+          <edges />
+          <settings layout="Tree" zoom="1.0" x="447.5" y="166.0" />
+          <SelectedNodes />
+          <Categories>
+            <Category>Methods</Category>
+            <Category>Inner Classes</Category>
+            <Category>Fields</Category>
+          </Categories>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.venv/lib64/python3.6/site-packages/weasyprint/tests/resources/sub_directory/sheet1.css">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="uml://JavaScript-modules-diagram//home/zhblnd/crimes_in_boston/flask-server-app">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>JavaScript-modules-diagram</ID>
+          <OriginalElement>$PROJECT_DIR$</OriginalElement>
+          <nodes>
+            <node x="" y="">$PROJECT_DIR$/.venv/lib64/python3.6/site-packages/weasyprint/tests/resources/sub_directory/sheet1.css</node>
+            <node x="" y="">$PROJECT_DIR$/.venv/lib/python3.6/site-packages/weasyprint/tests/resources/sub_directory/sheet1.css</node>
+            <node x="" y="">$PROJECT_DIR$/.venv/lib64/python3.6/site-packages/weasyprint/tests/resources/sheet2.css</node>
+            <node x="" y="">$PROJECT_DIR$/.venv/lib/python3.6/site-packages/weasyprint/tests/resources/sheet2.css</node>
+          </nodes>
+          <notes />
+          <edges />
+          <settings layout="Hierarchic Group" zoom="1.0" x="200.5" y="105.5" />
+          <SelectedNodes />
+          <Categories>
+            <Category>All</Category>
+          </Categories>
+          <VISIBILITY>Overview</VISIBILITY>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/nice_best_k_means_review.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" column="97" selection-start-line="17" selection-start-column="97" selection-end-line="17" selection-end-column="97" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/best_k_means.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="233">
-          <caret line="21" selection-start-line="21" selection-end-line="22" selection-end-column="169" />
+        <state relative-caret-position="263">
+          <caret line="23" selection-start-line="23" selection-end-line="23" selection-end-column="151" />
           <folding>
             <marker date="1577034061014" expanded="true" signature="285:416" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="94">
+          <caret line="127" column="46" selection-start-line="127" selection-start-column="46" selection-end-line="127" selection-end-column="46" />
+          <folding>
+            <element signature="e#0#89#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -591,17 +699,7 @@
     <entry file="file://$PROJECT_DIR$/templates/k-means.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="184">
-          <caret line="13" column="169" selection-start-line="13" selection-start-column="169" selection-end-line="13" selection-end-column="169" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="93" column="37" selection-start-line="93" selection-start-column="37" selection-end-line="93" selection-end-column="37" />
-          <folding>
-            <element signature="e#0#89#0" expanded="true" />
-          </folding>
+          <caret line="13" column="172" selection-start-line="13" selection-start-column="172" selection-end-line="13" selection-end-column="172" />
         </state>
       </provider>
     </entry>

@@ -86,7 +86,7 @@ def start_k_means(filename):
     #Оценка методом силуэтов
     score_2 = metrics.silhouette_score(X, labels=km.labels_)
     f = open("./scores/"+"k_means_score_2", "w+")
-    f.write(str(score))
+    f.write(str(score_2))
     f.close()
     # score_2 = 0.39
     fig = plt.figure(1, figsize=(40, 40))

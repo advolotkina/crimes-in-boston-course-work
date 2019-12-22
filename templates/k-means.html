@@ -11,7 +11,8 @@
   <h4>Кластеризация по районам и типам преступлений:</h4>
   <img src="{{url_for('static', filename='district_and_offence_code_clustering_k_means.png')}}" />
 <a href="{{ url_for('download_model', model_filename = model_filename) }}" ><button class='btn btn-default'>Скачать модель кластеризации по районам</button></a>
-<a href="{{ url_for('download_model', model_filename = model_filename2) }}" ><button class='btn btn-default'>Скачать модель кластеризации по районам и типам</button></a>
+<a href="{{ url_for('download_model', model_filename = model_filename2) }}" ><button class='btn btn-default'>Скачать модель кластеризации по районам и типам</button></a><p>
+ <a href="{{ url_for('best_k_means_pdf', _score = score, _score2 = score2, file = filename, hierarchy_score = hierarchy_score) }}">Скачать pdf файл</a>
     <h3>Оценка методом силуэт:</h3>
     <p>{{ score2 }}</p>
 <h3>Элементы и приписанные им кластеры:</h3>

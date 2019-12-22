@@ -1,7 +1,7 @@
 {% extends "base_layout.html" %}
 {% block content %}
 <div class="k-means">
-  <h3>Выбранная модель: к-средних</h3>
+  <h3>Выбрана лучшая модель: к-средних</h3>
     <h3>Оценка методом силуэтов k-means:</h3>
     <p>{{ k_means_score }}</p>
     <h3>Оценка методом силуэтов иерархической модели:</h3>
@@ -16,6 +16,8 @@
   <img src="{{url_for('static', filename='district_and_offence_code_clustering_k_means.png')}}"/>
     <h3>Оценка методом силуэтов:</h3>
     <p>{{ score2 }}</p>
+    <h3>Оценка методом силуэтов иерархической модели:</h3>
+    <p>{{ hierarchy_score2 }}</p>
 
 {#    <a href="{{ url_for('best_k_means_pdf', file = filename) }}">Скачать модель</a>#}
 {#    <a href="{{ url_for('best_k_means_pdf', _score = score, _score2 = score2, dict = _dict) }}">Скачать pdf отчет</a>#}

@@ -6,6 +6,7 @@ import hierarchy as hierarchy_module
 import simple_tasks as simple_tasks_module
 import crimes_freq as crimes_freq_module
 import clean_data as clean_data_module
+import freq_type as freq_type_module
 from PIL import Image
 import PIL
 import pdfkit
@@ -13,7 +14,7 @@ from flask_weasyprint import HTML, render_pdf
 from sklearn import metrics
 
 UPLOAD_FOLDER = '/home/zhblnd/crimes_in_boston/flask-server-app/uploads'
-ALLOWED_EXTENSIONS = set(['csv','pkl'])
+ALLOWED_EXTENSIONS = set(['csv', 'pkl'])
 # Create a new Flask application
 app = Flask(__name__)
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
@@ -31,19 +32,22 @@ def main():
         if file and allowed_file(file.filename):
             filename = secure_filename(file.filename)
             file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
-            return redirect(url_for('data', filename = filename ))
+            return redirect(url_for('data', filename=filename))
     return render_template("main.html")
+
 
 @app.route('/data')
 def data():
     filename = request.args.get('filename')
-    return render_template("data.html", filename = filename)
+    return render_template("data.html", filename=filename)
+
 
 @app.route('/user-task')
 def user_task():
     return render_template("user_task.html")
 
-@app.route('/user-task/predict_with_model', methods=['GET','POST'])
+
+@app.route('/user-task/predict_with_model', methods=['GET', 'POST'])
 def predict_with_model():
     if request.method == 'POST':
         file = request.files['file']
@@ -60,9 +64,11 @@ def predict_with_model():
                     model_file2.save(os.path.join(app.config['UPLOAD_FOLDER'], model_filename2))
                     option = request.form['radiobutton']
                     print(option)
-                    return redirect(url_for('predict_with_model_main', data=filename, model=model_filename, model2 = model_filename2,
-                                            clustering = option))
+                    return redirect(url_for('predict_with_model_main', data=filename, model=model_filename,
+                                            model2=model_filename2,
+                                            clustering=option))
     return render_template("predict_with_model.html")
+
 
 @app.route('/user-task/predict_with_model/main')
 def predict_with_model_main():
@@ -75,36 +81,44 @@ def predict_with_model_main():
         clean_data_module.clean(data_file)
         score, score2, objects, labels = k_means_module.predict_with_model(data_file, model_file, model_file2)
         dictionary = dict(zip(tuple(objects), tuple(labels)))
-        return render_template("k-means.html", score=score, score2=score2, _dict = dictionary, model_filename = model_file,
-                               model_filename2 = model_file2, filename = data_file)
+        return render_template("k-means.html", score=score, score2=score2, _dict=dictionary,
+                               model_filename=model_file,
+                               model_filename2=model_file2, filename=data_file)
     if clustering == "hierarchy":
-        return "TODO"
+        clean_data_module.clean(data_file)
+        score, score2, objects, labels = hierarchy_module.predict_with_model(data_file, model_file, model_file2)
+        dictionary = dict(zip(tuple(objects), tuple(labels)))
+        return render_template("hierarchy.html", score=score, score2=score2, model_filename=model_file,
+                               model_filename2=model_file2, filename=data_file)
 
 
-@app.route('/user-task/train_and_predict', methods=['GET','POST'])
+@app.route('/user-task/train_and_predict', methods=['GET', 'POST'])
 def train_and_predict():
     if request.method == 'POST':
         file = request.files['file']
         if file and allowed_file(file.filename):
             filename = secure_filename(file.filename)
             file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
-            return redirect(url_for('train_and_predict_main', filename = filename ))
+            return redirect(url_for('train_and_predict_main', filename=filename))
     return render_template("train_and_predict.html")
+
 
 @app.route('/user-task/train_and_predict/main')
 def train_and_predict_main():
     data_file = request.args.get('filename')
     clean_data_module.clean(data_file)
     k_means_score1, k_means_score2, objects_array, labels_array, model_filename, model_filename2 = k_means_module.start_k_means(data_file)
-    hierarchy_score1, hierarchy_score2 = hierarchy_module.start_hierarhy(data_file)
+    hierarchy_score1, hierarchy_score2, model_filename, model_filename2 = hierarchy_module.start_hierarhy(data_file)
     if (1-k_means_score1)<(1-hierarchy_score1):
         dictionary = dict(zip(tuple(objects_array), tuple(labels_array)))
 
-        return render_template("best_k_means.html", k_means_score = k_means_score1, hierarchy_score = hierarchy_score1,
-                               score = k_means_score1, score2 = k_means_score2, _dict = dictionary,
-                               filename = data_file, model_filename = model_filename, model_filename2 = model_filename2)
+        return render_template("best_k_means.html", k_means_score=k_means_score1, hierarchy_score=hierarchy_score1,
+                               score=k_means_score1, score2=k_means_score2, _dict=dictionary,
+                               filename = data_file, model_filename=model_filename, model_filename2=model_filename2,
+                               hierarchy_score2=hierarchy_score2)
     else:
-        return render_template("best_hierarchy.html")
+        return render_template("best_hierarchy.html", k_means_score=k_means_score1,
+                               hierarchy_score=hierarchy_score1)
 
 
 @app.route('/user-task/train_and_predict/k_means<a>')
@@ -116,8 +130,9 @@ def best_k_means_pdf():
     score2 = request.args.get('_score2')
     filename = request.args.get('file')
     hierarchy_score = request.args.get('hierarchy_score')
-    return render_pdf(url_for('nice_k_means_pdf', score = score, score2 = score2, file = filename,
-                              hierarchy_score = hierarchy_score))
+    return render_pdf(url_for('nice_k_means_pdf', score=score, score2=score2, file=filename,
+                              hierarchy_score=hierarchy_score))
+
 
 @app.route('/best_k_means_pdf_review')
 def nice_k_means_pdf():
@@ -132,14 +147,16 @@ def nice_k_means_pdf():
     im = im.resize(newsize)
     im.save("./static/district_and_offence_code_clustering_k_means_review.png")
 
-    return render_template("nice_best_k_means_review.html", score = score, score2 = score2, _dict = dictionary,
-                           hierarchy_score = hierarchy_score, k_means_score = score)
+    return render_template("nice_best_k_means_review.html", score=score, score2=score2, _dict=dictionary,
+                           hierarchy_score=hierarchy_score, k_means_score=score)
+
 
 @app.route('/download-model')
 def download_model():
     model_filename = request.args.get('model_filename')
-    return send_from_directory('./models/',
+    return send_from_directory('./uploads/',
                                model_filename, as_attachment=True)
+
 
 @app.route('/k-means',methods=['GET','POST'])
 def k_means():
@@ -148,36 +165,45 @@ def k_means():
     score, score2, objects, labels, model_filename, model_filename2 = k_means_module.start_k_means(filename)
     dictionary = dict(zip(tuple(objects), tuple(labels)))
 
-    return render_template("k-means.html", score = score, score2 = score2, _dict = dictionary,
-                           model_filename = model_filename, model_filename2 = model_filename2,
-                           filename = filename)
+    return render_template("k-means.html", score=score, score2=score2, _dict=dictionary,
+                           model_filename=model_filename, model_filename2=model_filename2,
+                           filename=filename)
 
 
-@app.route('/hierarchy',methods=['GET','POST'])
+@app.route('/hierarchy',methods=['GET', 'POST'])
 def hierarchy():
     filename = request.args.get('filename')
     clean_data_module.clean(filename)
-    hierarchy_module.start_hierarhy(filename)
-    return render_template("hierarchy.html")
+    score, score2, model_filename, model_filename2 = hierarchy_module.start_hierarhy(filename)
+    return render_template("hierarchy.html", score=score, score2=score2, model_filename=model_filename,
+                           model_filename2=model_filename2, filename=filename)
 
+@app.route('/freq_type',methods=['GET','POST'])
+def freq_type():
+    filename = request.args.get('filename')
+    freq_type_module.start(filename)
+    return render_template("freq_type.html")
 
-@app.route('/simple-tasks',methods=['GET','POST'])
+@app.route('/simple-tasks', methods=['GET', 'POST'])
 def simple_tasks():
     filename = request.args.get('filename')
     month_with_max_shootings = simple_tasks_module.max_shooting_month(filename)
     average_shooting_month = simple_tasks_module.average_shooting_month(filename)
-    return render_template("simple_tasks.html", average_shooting_month = average_shooting_month,
-                           month_with_max_shootings = month_with_max_shootings, filename = filename)
+    return render_template("simple_tasks.html", average_shooting_month=average_shooting_month,
+                           month_with_max_shootings=month_with_max_shootings, filename=filename)
 
-@app.route('/сrimes-frequency',methods=['GET','POST'])
+
+@app.route('/сrimes-frequency', methods=['GET', 'POST'])
 def crimes_frequency():
     filename = request.args.get('filename')
     crimes_freq_module.crimes_freq_start(filename)
     return render_template("crimes_freq.html")
 
+
 @app.route('/text-review')
 def text_review():
     return render_template("text_review.html")
+
 
 @app.route('/pdf_review')
 def pdf_review():
@@ -198,8 +224,9 @@ def pdf_review():
     hierarchy_score = f.read()
     f.close()
 
-    return render_template("nice_pdf_review.html",k_means_score = score, k_means_score2 = score_2,
-                           hierarchy_score = hierarchy_score )
+    return render_template("nice_pdf_review.html", k_means_score=score, k_means_score2=score_2,
+                           hierarchy_score=hierarchy_score)
+
 
 @app.route('/simple_review/')
 def simple_review():
@@ -208,8 +235,9 @@ def simple_review():
     average_shooting_month = simple_tasks_module.average_shooting_month(filename)
     shooting_list = simple_tasks_module.getShootingNumPerMonth(filename)
     i = 1;
-    return render_template("simple_review.html",average_shooting_month = average_shooting_month,
-                           month_with_max_shootings = month_with_max_shootings, shooting_list = shooting_list,i = i)
+    return render_template("simple_review.html", average_shooting_month=average_shooting_month,
+                           month_with_max_shootings=month_with_max_shootings, shooting_list=shooting_list, i=i)
+
 
 # Не текстовый, а общий(
 @app.route('/text_review.pdf')
@@ -217,10 +245,13 @@ def hello_pdf():
     # Make a PDF from another view
     return render_pdf(url_for('pdf_review'))
 
+
 @app.route('/simple_review.pdf',)
 def simple_pdf():
     filename = request.args.get('file')
-    return render_pdf(url_for("simple_review",file = filename))
+    return render_pdf(url_for("simple_review", file=filename))
+
+
 # main loop to run app in debug mode
 if __name__ == '__main__':
     app.run(host='0.0.0.0')

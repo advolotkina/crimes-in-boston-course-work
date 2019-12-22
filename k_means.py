@@ -7,6 +7,7 @@ import pickle
 from mpl_toolkits.mplot3d import Axes3D
 from sklearn import metrics
 
+
 def start_k_means(filename):
     df = pd.read_csv('./uploads/' + filename)
     print(df.values)
@@ -22,7 +23,7 @@ def start_k_means(filename):
 
     X = location.values
 
-    #Нахождение оптимального количества кластеров
+    # Нахождение оптимального количества кластеров
     cluster_range = range(1, 20)
     cluster_errors = []
 
@@ -42,15 +43,13 @@ def start_k_means(filename):
     km.fit(X)
     y_km = km.predict(X)
     labels_array = km.labels_
-    # labels_array.tolist()
     model_filename = "k_means_districts.pkl"
-    pickle.dump(km, open("./models/"+model_filename, "wb"))
-    #Оценка методом силуэтов
+    pickle.dump(km, open("./uploads/"+model_filename, "wb"))
+    # Оценка методом силуэтов
     score = metrics.silhouette_score(X, labels=km.labels_)
     f = open("./scores/"+"k_means_score", "w+")
     f.write(str(score))
     f.close()
-    # score = 0.39
     centers = km.cluster_centers_
 
     # КЛастеризация по районам
@@ -63,7 +62,7 @@ def start_k_means(filename):
     plt.xlabel("Long")
     plt.savefig('./static/district_clustering.png')
 
-    #Кластеризация по районам маленькая картинка для отчета
+    # Кластеризация по районам маленькая картинка для отчета
     plt.figure()
     plt.scatter(X[:, 1], X[:, 0], c=y_km, s=50, cmap="viridis")
     plt.scatter(centers[:, 1], centers[:, 0], c="red", s=50, alpha=0.5)
@@ -72,7 +71,7 @@ def start_k_means(filename):
     plt.xlabel("Long")
     plt.savefig('./static/district_clustering_review.png')
 
-    #Кластеризация по районам и типам преступлений
+    # Кластеризация по районам и типам преступлений
     location = df[["Lat", "Long", "OFFENSE_CODE"]]
 
     location = location.loc[(location["Lat"] > 40) & (location["Long"] < -60)]
@@ -82,13 +81,12 @@ def start_k_means(filename):
     km.fit(X)
     y_km = km.predict(X)
     model_filename2 = "k_means_districts_and_offence_codes.pkl"
-    pickle.dump(km, open("./models/" + model_filename2, "wb"))
-    #Оценка методом силуэтов
+    pickle.dump(km, open("./uploads/" + model_filename2, "wb"))
+    # Оценка методом силуэтов
     score_2 = metrics.silhouette_score(X, labels=km.labels_)
     f = open("./scores/"+"k_means_score_2", "w+")
     f.write(str(score_2))
     f.close()
-    # score_2 = 0.39
     fig = plt.figure(1, figsize=(40, 40))
     ax = Axes3D(fig, rect=[0, 0, 0.95, 1], elev=48, azim=134)
     ax.scatter(X[:, 1], X[:, 0], X[:, 2], c=y_km, edgecolor="k", s=50)
@@ -99,6 +97,7 @@ def start_k_means(filename):
     plt.savefig('./static/district_and_offence_code_clustering_k_means.png')
 
     return score, score_2, objects, labels_array, model_filename, model_filename2
+
 
 def predict_with_model(data_file,model_file1, model_file2):
     df = pd.read_csv('./uploads/' + data_file)
@@ -118,7 +117,6 @@ def predict_with_model(data_file,model_file1, model_file2):
     f = open("./scores/" + "k_means_score", "w+")
     f.write(str(score))
     f.close()
-    # score = 0.39
     centers = km_districts.cluster_centers_
 
     # КЛастеризация по районам
